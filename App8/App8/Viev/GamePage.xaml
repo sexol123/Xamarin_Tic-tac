@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:app8="clr-namespace:App8;assembly=App8"
+             x:Class="App8.Viev.GamePage">
+    <ContentPage.Resources>
+       <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="Image.Aspect" Value="Fill"/>
+                <Setter Property="Image.VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Image.HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Image.IsOpaque" Value="False"></Setter>
+            </Style>
+           
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    <Grid BackgroundColor="Teal" ColumnSpacing="2" RowSpacing="2" Margin="1,1,1,5">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="150*"/>
+        </Grid.ColumnDefinitions>
+
+
+<Slider x:Name="Slider" Value="54" Maximum="200" Minimum="32" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" />
+        <Button x:Name="cell1" FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Grid.Column="0" Grid.Row="0" Clicked="Cell1_OnClick" />
+        
+        <Button x:Name="cell2" FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Text="" Grid.Column="1" Clicked="Cell1_OnClick" Grid.Row="0" />
+        <Button x:Name="cell3" FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Text="" Grid.Column="2" Clicked="Cell1_OnClick" Grid.Row="0" />
+
+        <Button x:Name="cell4" Text="" FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Grid.Column="0" Clicked="Cell1_OnClick" Grid.Row="1" />
+        <Button x:Name="cell5" FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Text="" Grid.Column="1" Clicked="Cell1_OnClick" Grid.Row="1" />
+        <Button x:Name="cell6"  FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Text="" Clicked="Cell1_OnClick" Grid.Column="2" Grid.Row="1" />
+
+        <Button x:Name="cell7" FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Text="" Grid.Column="0" Clicked="Cell1_OnClick"  Grid.Row="2" />
+        <Button x:Name="cell8" FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Text="" Grid.Column="1" Clicked="Cell1_OnClick" Grid.Row="2" />
+        <Button x:Name="cell9" FontSize="{Binding Source={x:Reference Name=Slider}, Path=Value}" Text=""  Grid.Column="2" Clicked="Cell1_OnClick" Grid.Row="2" />
+        <Button x:Name="current_s" Text="X" BorderColor="Lime" Grid.Column="0" Grid.Row="3"      
+                TextColor="Fuchsia" />
+        
+        
+
+    </Grid>
+</ContentPage>

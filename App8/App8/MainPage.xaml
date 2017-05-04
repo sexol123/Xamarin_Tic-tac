@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App8"
+             xmlns:vievModel="clr-namespace:App8.Viev_Model;assembly=App8"
+             x:Class="App8.MainPage"
+             Title="email: sergeimaleev@gmail.com" >
+    <ContentPage.Resources>
+       <ResourceDictionary>
+           <Style x:Key="buttonStyle" TargetType="Button">
+               <Setter Property="FontSize" Value="36"/>
+               <Setter Property="TextColor" Value="Teal"></Setter>
+           </Style>
+       </ResourceDictionary>
+    </ContentPage.Resources>
+   
+    <StackLayout x:Name="StackLayoutM" VerticalOptions="Center"
+                 HorizontalOptions="Center">
+        
+        <Label Text="by sexol123" TextColor="Teal" HorizontalOptions="EndAndExpand"/>
+        <Label Text="Tic-tac "
+               VerticalTextAlignment="Center"
+               VerticalOptions="StartAndExpand"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="CenterAndExpand"
+               TextColor="Red"
+               FontSize="28"
+               FontAttributes="Bold"
+               
+        />
+        <Button Text="New Game 3x3" Style="{StaticResource buttonStyle}" Clicked="ButtonStart_OnClicked"/>
+        <Button Text="New Game Multi"  Style="{StaticResource buttonStyle}" Clicked="ButtonResume_OnClicked"/>
+        <!--<Picker x:Name="siPicker" Title= "Size" ></Picker>-->
+        <Label 
+            Text="{Binding DateTime,
+                        StringFormat='{0:T}'}"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="StartAndExpand">
+            <Label.BindingContext>
+                <vievModel:ClockViewModel />
+            </Label.BindingContext>
+        </Label>
+
+    </StackLayout>
+    
+</ContentPage>
